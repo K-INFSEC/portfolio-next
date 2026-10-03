@@ -1,0 +1,16 @@
+COLOQUE SEUS CERTIFICADOS AQUI
+==============================
+
+1. Copie os arquivos PNG (ou JPG / WEBP) para esta pasta.
+2. Recarregue o site: eles aparecem automaticamente na secao "Certificados".
+
+Dicas:
+- Para controlar a ordem, comece o nome com numeros:
+    01-iso-27001.png
+    02-cc-domain-2.png
+    03-google-cloud-redes.png
+    04-google-cloud-ia.png
+- Sem titulo definido, o nome do arquivo vira o titulo
+  (ex.: "01-iso-27001.png" -> "Iso 27001").
+- Para definir um titulo bonito, edite "certificates.titles" em data/content.js.
+

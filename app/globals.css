@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Variáveis essenciais (design tokens)
+   ============================================================ */
+:root {
+  --bg: #050a18;
+  --fg: #f5f7ff;
+  --muted: #93a0bc;
+  --accent: #2563eb;
+  --accent-glow: #3b82f6;
+  --accent-light: #7fa8ff;
+  --border: rgba(110, 150, 255, 0.15);
+
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --section-space: clamp(6rem, 14vw, 12rem);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-height: 4.5rem;
+}
+
+/* ============================================================
+   Reset básico
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-glow);
+  outline-offset: 4px;
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #17264d;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Utilitários de layout reutilizáveis
+   ============================================================ */
+@layer components {
+  .container-fluid {
+    @apply mx-auto w-full max-w-content px-gutter;
+  }
+  .section-space {
+    @apply py-section;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.2em] text-accent-light/80;
+  }
+  .text-gradient {
+    background: linear-gradient(180deg, #ffffff 25%, #8fb3ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
