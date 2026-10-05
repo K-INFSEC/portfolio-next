@@ -29,6 +29,18 @@ Este projeto foi construído utilizando tecnologias modernas focadas em performa
   * Escalabilidade e sombras dinâmicas no *hover* (foco do mouse).
 * **Arquitetura Orientada a Dados:** Todo o conteúdo de texto do site é centralizado no arquivo `data/content.js`, separando a lógica de design do conteúdo inserido.
 
+## 🛡️ Segurança e DevSecOps (Hardening)
+
+Sendo um portfólio de um profissional de Segurança da Informação, o código foi auditado e desenvolvido seguindo as melhores práticas de **Clean Code** e **Segurança (Security by Design)**:
+* **Zero Vulnerabilidades de Injeção:** Arquitetura 100% estática baseada no padrão JAMStack. A ausência de banco de dados e formulários impossibilita ataques como *SQL Injection (SQLi)* e *Cross-Site Scripting (XSS)*.
+* **Security Headers Rigorosos:** O arquivo `next.config.mjs` possui cabeçalhos de segurança estritos (*Hardening*):
+  * `Strict-Transport-Security (HSTS)`: Força conexões criptografadas (HTTPS).
+  * `X-Frame-Options: DENY`: Mitigação contra ataques de Clickjacking.
+  * `X-Content-Type-Options: nosniff`: Bloqueia farejamento de MIME types.
+  * `Referrer-Policy: strict-origin-when-cross-origin`: Protege dados de navegação.
+  * `Permissions-Policy`: Bloqueio de hardware (câmera, microfone, geolocalização).
+* **Proteção de Dados Pessoais:** Nenhuma API externa ou banco de dados é acionado no cliente, garantindo vazamento zero de informações além do currículo público.
+
 ---
 
 ## 💻 Estrutura do Projeto
