@@ -67,13 +67,13 @@ export default function Hero() {
         </div>
 
         {/* Direita: links em texto */}
-        <ul className="flex animate-fade-up gap-8 text-sm text-muted [animation-delay:1100ms] md:absolute md:bottom-12 md:right-gutter md:flex-col md:items-end md:gap-3">
+        <ul className="flex flex-wrap animate-fade-up gap-6 text-sm text-muted [animation-delay:1100ms] md:absolute md:bottom-12 md:right-gutter md:flex-col md:flex-nowrap md:items-end md:gap-3">
           {hero.links.map((l) => (
             <li key={l.label}>
               <a
                 href={l.href}
                 {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group inline-flex items-center gap-2 transition-colors duration-500 ease-premium hover:text-foreground"
+                className="group inline-flex whitespace-nowrap items-center gap-2 transition-colors duration-500 ease-premium hover:text-foreground"
               >
                 {l.icon === "github" && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 transition-opacity"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.34 6-1.53 6-6.76 0-1.5-.5-2.8-1.4-3.8.14-.3.6-1.8-.14-3.8 0 0-1.2-.4-4 1.5-1.1-.3-2.3-.4-3.4-.4-1.1 0-2.3.1-3.4.4-2.8-1.9-4-1.5-4-1.5-.7 2-.3 3.5-.1 3.8-1 1-1.4 2.3-1.4 3.8 0 5.2 3 6.4 6 6.76-.7.6-1 1.5-1 2.9v4"/><path d="M9 20c-3 1-5-1-5-3"/></svg>
